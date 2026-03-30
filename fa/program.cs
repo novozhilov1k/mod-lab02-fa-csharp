@@ -7,17 +7,17 @@ using System.Threading.Tasks;
 namespace fans
 {
   public class State
-  {
-    public string Name;
-    public Dictionary<char, State> Transitions;
+{
+    public string Name = "";
+    public Dictionary<char, State> Transitions = new Dictionary<char, State>();
     public bool IsAcceptState;
-  }
+}
 
 
   public class FA1
   {
     //s0 начало, s1 есть 1 но нет 0, s2 есть 0 нет 1, s3 есть оба, s4 2 или больше нуля
-    public static State s0 = new State()
+    public State s0 = new State()
     {
       Name = "s0",
       IsAcceptState = false,
@@ -68,14 +68,14 @@ namespace fans
     public bool? Run(IEnumerable<char> s)
     {
       State cur = InitialState;
-      foreach(shar ss in s)
+      foreach(char ss in s)
       {
-        if(ss != "1" && ss != "0")
+        if(ss != '1' && ss != '0')
         {
           return null;
         }
 
-        if (!current.Transitions.ContainsKey(c)) return null;
+        if (!cur.Transitions.ContainsKey(ss)) return null;
 
         cur = cur.Transitions[ss];
       }
@@ -86,7 +86,7 @@ namespace fans
 
   public class FA2
   {
-    public static State s0 = new State()
+    public State s0 = new State()
     {
       Name = "s0",
       IsAcceptState = false,
@@ -158,14 +158,14 @@ namespace fans
     public bool? Run(IEnumerable<char> s)
     {
       State cur = InitialState;
-      foreach(shar ss in s)
+      foreach(char ss in s)
       {
-        if(ss != "1" && ss != "0")
+        if(ss != '1' && ss != '0')
         {
           return null;
         }
 
-        if (!current.Transitions.ContainsKey(c)) return null;
+        if (!cur.Transitions.ContainsKey(ss)) return null;
 
         cur = cur.Transitions[ss];
       }
@@ -176,7 +176,7 @@ namespace fans
   
   public class FA3
   {
-    public static State s0 = new State()
+    public State s0 = new State()
     {
       Name = "s0",
       IsAcceptState = false,
@@ -212,14 +212,14 @@ namespace fans
     public bool? Run(IEnumerable<char> s)
     {
       State cur = InitialState;
-      foreach(shar ss in s)
+      foreach(char ss in s)
       {
-        if(ss != "1" && ss != "0")
+        if(ss != '1' && ss != '0')
         {
           return null;
         }
 
-        if (!current.Transitions.ContainsKey(c)) return null;
+        if (!cur.Transitions.ContainsKey(ss)) return null;
 
         cur = cur.Transitions[ss];
       }
