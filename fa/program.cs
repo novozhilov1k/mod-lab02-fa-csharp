@@ -17,7 +17,7 @@ namespace fans
   public class FA1
   {
     //s0 начало, s1 есть 1 но нет 0, s2 есть 0 нет 1, s3 есть оба, s4 2 или больше нуля
-    public State s0 = new State()
+    public static State s0 = new State()
     {
       Name = "s0",
       IsAcceptState = false,
@@ -86,7 +86,7 @@ namespace fans
 
   public class FA2
   {
-    public State s0 = new State()
+    public static State s0 = new State()
     {
       Name = "s0",
       IsAcceptState = false,
@@ -176,7 +176,7 @@ namespace fans
   
   public class FA3
   {
-    public State s0 = new State()
+    public static State s0 = new State()
     {
       Name = "s0",
       IsAcceptState = false,
